@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server",
+    "serve": "webpack serve --hot-only --mode development",
     "lint": "eslint",
     "test": "jest --config tests/jest.config.js",
     "test:coverage": "jest --config tests/jest.config.js --coverage"
@@ -20,18 +20,20 @@
     "eslint": "^7.29.0",
     "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.3.2",
+    "purecss": "^2.0.6",
     "style-loader": "^3.0.0",
     "webpack": "^5.40.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.7.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
     "babel-jest": "^27.0.5",
+    "copy-webpack-plugin": "^9.0.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "jest": "^27.0.5"
+    "jest": "^27.0.5",
+    "webpack-dev-server": "^3.11.2"
   }
 }

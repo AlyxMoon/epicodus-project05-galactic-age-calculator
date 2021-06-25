@@ -20,7 +20,7 @@ This is my fifth independent project for the Epicodus bootcamp program. The goal
 2. Open the project folder in your code editor of choice.
 3. Install all required dependencies with `npm install`.
 4. Run `npm run build` to generate files, and open the `dist/index.html` file to see the page.
-5. Optionally, run `npm run dev` to start a dev server and see the files that way.
+5. Optionally, run `npm run serve` to start a dev server and see the files that way.
 To set up `eslint` though, you need the following:
 
 ## Objectives

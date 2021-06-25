@@ -1,0 +1,46 @@
+body *  {
+  box-sizing: border-box;
+}
+
+a {
+  color: #3FB0AC;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+a:hover, a:focus {
+  color: #47dad5;
+}
+
+main {
+  min-height: 90vh;
+}
+
+footer {
+  width: 100%;
+  padding: 20px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  background: linear-gradient(30deg, #111111, #091823);
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul li {
+
+}
+
+footer .brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}

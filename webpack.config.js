@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -18,6 +19,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Galatic Age Calculator',
       inject: 'body',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets'),
+          to: path.resolve(__dirname, 'dist/assets'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+          to: path.resolve(__dirname, 'dist/favicon.ico'),
+        },
+      ],
     }),
   ],
   module: {
@@ -46,5 +59,7 @@ module.exports = {
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './dist',
+    hot: true,
+    inline: true,
   },
 }
