@@ -1,13 +1,9 @@
 import GalacticAgeCalculator from '@/lib/GalaticAgeCalculator'
 
 describe('Class GalaticAgeCalculator', () => {
-  it('should not blow up when creating it', () => {
+  it('should start with default properties set', () => {
     const calculator = new GalacticAgeCalculator()
-    expect(calculator).toBeTruthy()
-  })
 
-  it('should start with all the ages set to 0', () => {
-    const calculator = new GalacticAgeCalculator()
     expect(calculator.ages).toEqual({
       mercury: 0,
       venus: 0,
@@ -19,10 +15,19 @@ describe('Class GalaticAgeCalculator', () => {
       neptune: 0,
       pluto: 0,
     })
-  })
 
-  it('should start with default life expectancy of 60', () => {
-    const calculator = new GalacticAgeCalculator()
+    expect(calculator.agesLeft).toEqual({
+      mercury: 0,
+      venus: 0,
+      earth: 0,
+      mars: 0,
+      jupiter: 0,
+      saturn: 0,
+      uranus: 0,
+      neptune: 0,
+      pluto: 0,
+    })
+
     expect(calculator.lifeExpectancy).toEqual(60)
   })
 
