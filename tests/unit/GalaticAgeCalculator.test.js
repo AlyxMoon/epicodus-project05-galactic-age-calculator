@@ -50,4 +50,19 @@ describe('Class GalaticAgeCalculator', () => {
     expect(calculator.ages.neptune).toBeCloseTo(0.15)
     expect(calculator.ages.pluto).toBeCloseTo(0.10)
   })
+
+  it('should set all ages correctly when setting venus age (rounded 2 decimal places with some allowed variance)', () => {
+    const calculator = new GalacticAgeCalculator()
+    calculator.setAge(100, 'venus')
+
+    expect(calculator.ages.mercury).toBeCloseTo(255.43)
+    expect(calculator.ages.venus).toBeCloseTo(100)
+    expect(calculator.ages.earth).toBeCloseTo(61.52)
+    expect(calculator.ages.mars).toBeCloseTo(32.71)
+    expect(calculator.ages.jupiter).toBeCloseTo(5.19)
+    expect(calculator.ages.saturn).toBeCloseTo(2.09)
+    expect(calculator.ages.uranus).toBeCloseTo(0.73)
+    expect(calculator.ages.neptune).toBeCloseTo(0.37)
+    expect(calculator.ages.pluto).toBeCloseTo(0.25)
+  })
 })
