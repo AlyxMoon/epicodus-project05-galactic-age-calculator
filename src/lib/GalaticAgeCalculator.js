@@ -1,7 +1,9 @@
 import roundToDecimal from '@/lib/roundToDecimal'
 
 export default class GalacticAgeCalculator {
-  constructor () {
+  constructor ({
+    lifeExpectancy = 60,
+  } = {}) {
     this.ages = {
       mercury: 0,
       venus: 0,
@@ -13,6 +15,8 @@ export default class GalacticAgeCalculator {
       neptune: 0,
       pluto: 0,
     }
+
+    this.lifeExpectancy = lifeExpectancy
 
     this.multOffsetFromEarth = {
       mercury: 4.152097305899739,
