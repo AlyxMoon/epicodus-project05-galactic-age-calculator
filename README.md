@@ -1,5 +1,7 @@
 # Epicodus | Independent Project 05 | Galatic Age Calculator
 
+[![Coverage Status](https://coveralls.io/repos/github/AlyxMoon/epicodus-project05-galactic-age-calculator/badge.svg?branch=main)](https://coveralls.io/github/AlyxMoon/epicodus-project05-galactic-age-calculator?branch=main)
+
 ##### Table of Contents
 1. [Description](#description)
 2. [Setting Up The Project](#setting-up-the-project)
