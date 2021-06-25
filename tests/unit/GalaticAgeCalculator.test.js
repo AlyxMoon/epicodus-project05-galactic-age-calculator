@@ -193,23 +193,42 @@ describe('Class GalaticAgeCalculator', () => {
       expect(calculator.agesLeft.pluto).toBeCloseTo(-0.20)
     })
 
-    it('should update agesLeft prop based on planet ages with negative years left', () => {
+    it('should update agesLeft prop based on planet ages with positive years left', () => {
       const calculator = new GalacticAgeCalculator({
         lifeExpectancy: 50,
       })
 
-      calculator.setAge(100)
+      calculator.setAge(40)
       calculator.calculateAgesLeft()
 
-      expect(calculator.agesLeft.mercury).toBeCloseTo(207.60)
-      expect(calculator.agesLeft.venus).toBeCloseTo(81.28)
-      expect(calculator.agesLeft.earth).toBeCloseTo(50)
-      expect(calculator.agesLeft.mars).toBeCloseTo(26.58)
-      expect(calculator.agesLeft.jupiter).toBeCloseTo(4.21)
-      expect(calculator.agesLeft.saturn).toBeCloseTo(1.70)
-      expect(calculator.agesLeft.uranus).toBeCloseTo(0.60)
-      expect(calculator.agesLeft.neptune).toBeCloseTo(0.30)
-      expect(calculator.agesLeft.pluto).toBeCloseTo(0.20)
+      expect(calculator.agesLeft.mercury).toBeCloseTo(41.52)
+      expect(calculator.agesLeft.venus).toBeCloseTo(16.26)
+      expect(calculator.agesLeft.earth).toBeCloseTo(10)
+      expect(calculator.agesLeft.mars).toBeCloseTo(5.32)
+      expect(calculator.agesLeft.jupiter).toBeCloseTo(0.84)
+      expect(calculator.agesLeft.saturn).toBeCloseTo(0.34)
+      expect(calculator.agesLeft.uranus).toBeCloseTo(0.12)
+      expect(calculator.agesLeft.neptune).toBeCloseTo(0.06)
+      expect(calculator.agesLeft.pluto).toBeCloseTo(0.04)
+    })
+
+    it('should update agesLeft prop based on planet ages with 0 years left', () => {
+      const calculator = new GalacticAgeCalculator({
+        lifeExpectancy: 50,
+      })
+
+      calculator.setAge(50)
+      calculator.calculateAgesLeft()
+
+      expect(calculator.agesLeft.mercury).toBeCloseTo(0)
+      expect(calculator.agesLeft.venus).toBeCloseTo(0)
+      expect(calculator.agesLeft.earth).toBeCloseTo(0)
+      expect(calculator.agesLeft.mars).toBeCloseTo(0)
+      expect(calculator.agesLeft.jupiter).toBeCloseTo(0)
+      expect(calculator.agesLeft.saturn).toBeCloseTo(0)
+      expect(calculator.agesLeft.uranus).toBeCloseTo(0)
+      expect(calculator.agesLeft.neptune).toBeCloseTo(0)
+      expect(calculator.agesLeft.pluto).toBeCloseTo(0)
     })
   })
 })
