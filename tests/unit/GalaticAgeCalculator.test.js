@@ -21,6 +21,19 @@ describe('Class GalaticAgeCalculator', () => {
     })
   })
 
+  it('should start with default life expectancy of 60', () => {
+    const calculator = new GalacticAgeCalculator()
+    expect(calculator.lifeExpectancy).toEqual(60)
+  })
+
+  it('should allow default life expectancy to be overridden on start', () => {
+    const calculator = new GalacticAgeCalculator({
+      lifeExpectancy: 70,
+    })
+
+    expect(calculator.lifeExpectancy).toEqual(70)
+  })
+
   describe('setAge()', () => {
     let calculator
 
