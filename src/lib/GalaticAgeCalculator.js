@@ -1,3 +1,4 @@
+import roundToDecimal from '@/lib/roundToDecimal'
 
 export default class GalacticAgeCalculator {
   constructor () {
@@ -12,27 +13,33 @@ export default class GalacticAgeCalculator {
       neptune: 0,
       pluto: 0,
     }
+
+    this.multOffsetFromEarth = {
+      mercury: 4.152097305899739,
+      venus: 1.6255451713395637,
+      earth: 1,
+      mars: 0.5316751872932182,
+      jupiter: 0.0842984451573283,
+      saturn: 0.03395874243713337,
+      uranus: 0.011902374911812329,
+      neptune: 0.006068280780808115,
+      pluto: 0.004033548637437019,
+    }
   }
 
   setAge (age, planet) {
-    if (planet === 'earth') {
-      this.ages.mercury = age / (87.97 / 365.26)
-      this.ages.venus = age / (224.70 / 365.26)
-      this.ages.earth = age
-      this.ages.mars = age * (1 / 1.8808476)
-      this.ages.jupiter = age * (1 / 11.862615)
-      this.ages.saturn = age * (1 / 29.447498)
-      this.ages.uranus = age * (1 / 84.016846)
-      this.ages.neptune = age * (1 / 164.79132)
-      this.ages.pluto = age * (1 / 247.92065)
-    }
+    this.ages.earth = age / this.multOffsetFromEarth[planet]
+    this.ages.mercury = this.ages.earth * this.multOffsetFromEarth.mercury
+    this.ages.venus = this.ages.earth * this.multOffsetFromEarth.venus
+    this.ages.mars = this.ages.earth * this.multOffsetFromEarth.mars
+    this.ages.jupiter = this.ages.earth * this.multOffsetFromEarth.jupiter
+    this.ages.saturn = this.ages.earth * this.multOffsetFromEarth.saturn
+    this.ages.uranus = this.ages.earth * this.multOffsetFromEarth.uranus
+    this.ages.neptune = this.ages.earth * this.multOffsetFromEarth.neptune
+    this.ages.pluto = this.ages.earth * this.multOffsetFromEarth.pluto
 
     for (const key in this.ages) {
-      const val = this.ages[key]
-      const rounded = Math.round(val * 100) / 100
-      this.ages[key] = rounded
+      this.ages[key] = roundToDecimal(this.ages[key], 2)
     }
-
-    console.log(this.ages)
   }
 }
