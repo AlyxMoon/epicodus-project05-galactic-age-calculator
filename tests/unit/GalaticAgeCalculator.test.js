@@ -21,7 +21,7 @@ describe('Class GalaticAgeCalculator', () => {
     })
   })
 
-  it('should set all ages correctly when setting earth age (rounded 2 digits)', () => {
+  it('should set all ages correctly when setting earth age (rounded 2 decimal places with some allowed variance)', () => {
     const calculator = new GalacticAgeCalculator()
     calculator.setAge(100, 'earth')
 
@@ -32,7 +32,7 @@ describe('Class GalaticAgeCalculator', () => {
     expect(calculator.ages.jupiter).toBeCloseTo(8.43)
     expect(calculator.ages.saturn).toBeCloseTo(3.40)
     expect(calculator.ages.uranus).toBeCloseTo(1.19)
-    expect(calculator.ages.pluto).toBeCloseTo(0.60)
-    expect(calculator.ages.mars).toBeCloseTo(0.40)
+    expect(calculator.ages.neptune).toBeCloseTo(0.61)
+    expect(calculator.ages.pluto).toBeCloseTo(0.40)
   })
 })
