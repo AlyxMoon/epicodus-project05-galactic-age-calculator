@@ -2,6 +2,17 @@ import GalacticAgeCalculator from './lib/GalaticAgeCalculator'
 import 'purecss/build/pure-min.css'
 import '@/styles/main.scss'
 
+const showCalculatorOutput = (calculator) => {
+  const outputAge = document.querySelector('#output-age')
+  const outputExpectancy = document.querySelector('#output-expectancy')
+
+  const activePlanet = document.querySelector('input[name="planet"]:checked')
+  if (!activePlanet) return
+
+  outputAge.innerText = calculator.ages[activePlanet.value]
+  outputExpectancy.innerText = calculator.agesLeft[activePlanet.value]
+}
+
 const addSidebarEventListeners = () => {
   document
     .querySelector('.sidebar button[data-action="collapse-sidebar"]')
@@ -28,6 +39,7 @@ const addPlanetEventListeners = (calculator) => {
       document.querySelector('.sidebar').classList.remove('collapsed')
 
       planetLabel.innerText = event.target.value
+      showCalculatorOutput(calculator)
     })
   }
 }
@@ -50,6 +62,8 @@ const addAgeInputListeners = (calculator) => {
       event.target.value = 0
     } else {
       calculator.setAge(num)
+      calculator.calculateAgesLeft()
+      showCalculatorOutput(calculator)
     }
   })
 
@@ -60,6 +74,8 @@ const addAgeInputListeners = (calculator) => {
       event.target.value = 0
     } else {
       calculator.lifeExpectancy = num
+      calculator.calculateAgesLeft()
+      showCalculatorOutput(calculator)
     }
   })
 }
@@ -67,10 +83,12 @@ const addAgeInputListeners = (calculator) => {
 const main = () => {
   const calculator = new GalacticAgeCalculator()
   calculator.setAge(1)
+  calculator.calculateAgesLeft()
 
   addSidebarEventListeners()
   addPlanetEventListeners(calculator)
   addAgeInputListeners(calculator)
+  showCalculatorOutput(calculator)
 }
 
 main()
