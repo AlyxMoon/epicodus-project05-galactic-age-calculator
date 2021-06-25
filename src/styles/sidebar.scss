@@ -1,0 +1,40 @@
+
+.sidebar {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+
+  width: 300px;
+  max-width: 90%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+  color: white;
+
+  &.collapsed {
+    width: 0;
+
+    header, article {
+      display: none;
+    }
+  }
+
+  button[data-action="expand-sidebar"] {
+    margin-left: 10px;
+  }
+
+  &:not(.collapsed) button[data-action="expand-sidebar"] {
+    display: none;
+  }
+
+  header {
+    padding: 10px 5px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    text-align: center;
+  }
+}
