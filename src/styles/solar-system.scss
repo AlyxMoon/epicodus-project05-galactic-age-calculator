@@ -1,23 +1,44 @@
+@use 'sass:math';
+
+@mixin planet ($diameter: 50px, $size: 15px, $yearOffset: 1) {
+  position: absolute;
+  top: -#{math.div($diameter, 2)};
+  left: -#{math.div($diameter, 2)};
+
+  width: $diameter;
+  height: $diameter;
+
+  border: 2px solid #DDDDDD;
+  border-radius: 100vh;
+
+  animation: planetary-rotation #{math.div(30, $yearOffset)}s linear infinite;
+
+  &:after {
+    content: '';
+  
+    position: absolute;
+    top: -#{math.div($size, 2)};
+    left: 50%;
+  
+    width: $size;
+    height: $size;
+  
+    background-color: white;
+    border-radius: 100vh;
+  }
+}
+
 .solar-system {
   position: relative;
 
   list-style: none;
 
-  li {
-    position: absolute;
-  
-    border: 2px solid white;
-    
-    @include planet();
-    animation: planetary-rotation 3s linear infinite;
-  }
-
   .mercury {
-    @include planet(50px);
+    @include planet(50px, $size: 10px, $yearOffset: 4.152097305899739);
   }
 
   .venus {
-    @include planet(100px);
+    @include planet(100px, $yearOffset: 1.6255451713395637);
   }
 
   .earth {
@@ -25,26 +46,26 @@
   }
 
   .mars {
-    @include planet(200px);
+    @include planet(200px, $yearOffset: 0.5316751872932182);
   }
 
   .jupiter {
-    @include planet(200px);
+    @include planet(300px, $size: 45px, $yearOffset: 0.0842984451573283);
   }
 
   .saturn {
-    @include planet(250px);
+    @include planet(400px, $size: 40px, $yearOffset: 0.03395874243713337);
   }
 
   .uranus {
-    @include planet(300px);
+    @include planet(500px, $size: 30px, $yearOffset: 0.011902374911812329);
   }
 
   .neptune {
-    @include planet(350px);
+    @include planet(600px, $size: 30px, $yearOffset: 0.006068280780808115);
   }
 
   .pluto {
-    @include planet(400px);
+    @include planet(700px, $yearOffset: 0.004033548637437019);
   }
 }
