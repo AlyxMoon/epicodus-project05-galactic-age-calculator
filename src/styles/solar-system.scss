@@ -1,6 +1,11 @@
 @use 'sass:math';
 
-@mixin planet ($diameter: 50px, $size: 15px, $yearOffset: 1) {
+@mixin planet (
+  $diameter: 50px, 
+  $size: 15px, 
+  $yearOffset: 1,
+  $color: white,
+) {
   position: absolute;
   top: -#{math.div($diameter, 2)};
   left: -#{math.div($diameter, 2)};
@@ -23,7 +28,8 @@
     width: $size;
     height: $size;
   
-    background-color: white;
+    border: 1px solid white;
+    background-color: $color;
     border-radius: 100vh;
   }
 }
@@ -34,38 +40,78 @@
   list-style: none;
 
   .mercury {
-    @include planet(50px, $size: 10px, $yearOffset: 4.152097305899739);
+    @include planet(
+      $diameter: 50px, 
+      $size: 10px, 
+      $yearOffset: 4.152097305899739,
+      $color: #D2B088,
+    );
   }
 
   .venus {
-    @include planet(100px, $yearOffset: 1.6255451713395637);
+    @include planet(
+      $diameter: 100px, 
+      $yearOffset: 1.6255451713395637,
+      $color: #E4B250,
+    );
   }
 
   .earth {
-    @include planet(150px);
+    @include planet(
+      $diameter: 150px,
+      $color: #2A2E52,
+    );
   }
 
   .mars {
-    @include planet(200px, $yearOffset: 0.5316751872932182);
+    @include planet(
+      $diameter: 200px, 
+      $yearOffset: 0.5316751872932182,
+      $color: #A28B64,
+    );
   }
 
   .jupiter {
-    @include planet(300px, $size: 45px, $yearOffset: 0.0842984451573283);
+    @include planet(
+      $diameter: 300px,
+      $size: 45px, 
+      $yearOffset: 0.0842984451573283,
+      $color: #AF8355,
+    );
   }
 
   .saturn {
-    @include planet(400px, $size: 40px, $yearOffset: 0.03395874243713337);
+    @include planet(
+      $diameter: 400px, 
+      $size: 40px,
+      $yearOffset: 0.03395874243713337,
+      $color: #F7CB82,
+    );
   }
 
   .uranus {
-    @include planet(500px, $size: 30px, $yearOffset: 0.011902374911812329);
+    @include planet(
+      $diameter: 500px, 
+      $size: 30px, 
+      $yearOffset: 0.011902374911812329,
+      $color: #B1DBF4,
+    );
   }
 
   .neptune {
-    @include planet(600px, $size: 30px, $yearOffset: 0.006068280780808115);
+    @include planet(
+      $diameter: 600px, 
+      $size: 30px, 
+      $yearOffset: 0.006068280780808115,
+      $color: #7B92C4,
+    );
   }
 
   .pluto {
-    @include planet(700px, $yearOffset: 0.004033548637437019);
+    @include planet(
+      $diameter: 700px, 
+      $yearOffset: 0.004033548637437019,
+      $color: #D5D5D5,
+    );
   }
 }
