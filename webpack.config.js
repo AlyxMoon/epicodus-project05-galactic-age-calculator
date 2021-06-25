@@ -8,6 +8,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -34,7 +39,6 @@ module.exports = {
         test: /\.js/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        enforce: 'pre',
       },
     ],
   },

@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  rootDir: path.resolve(__dirname, '../'),
+  rootDir: path.resolve(__dirname, '..'),
   moduleFileExtensions: [
     'js',
     'json',
@@ -12,7 +12,6 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
   },
-  mapCoverage: true,
   coverageDirectory: '<rootDir>/test/coverage',
   collectCoverageFrom: [
     'src/**/*.js',
