@@ -10,7 +10,7 @@
   position: absolute;
   z-index: $z-index;
   top: -#{math.div($diameter, 2)};
-  left: -#{math.div($diameter, 2)};
+  left: #{400px - math.div($diameter, 2)};
 
   width: $diameter;
   height: $diameter;
@@ -50,6 +50,12 @@
 
 .solar-system {
   position: relative;
+
+  flex-shrink: 0;
+  height: 100%;
+  width: 800px;
+
+  display: block;
 
   list-style: none;
 
