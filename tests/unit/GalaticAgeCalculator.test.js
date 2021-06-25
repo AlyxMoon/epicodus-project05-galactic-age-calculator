@@ -172,4 +172,25 @@ describe('Class GalaticAgeCalculator', () => {
       expect(calculator.ages.pluto).toBeCloseTo(100)
     })
   })
+
+  describe('calculateAgesLeft()', () => {
+    it('should update agesLeft prop based on planet ages with positive years left', () => {
+      const calculator = new GalacticAgeCalculator({
+        lifeExpectancy: 50,
+      })
+
+      calculator.setAge(100)
+      calculator.calculateAgesLeft()
+
+      expect(calculator.agesLeft.mercury).toBeCloseTo(207.60)
+      expect(calculator.agesLeft.venus).toBeCloseTo(81.28)
+      expect(calculator.agesLeft.earth).toBeCloseTo(50)
+      expect(calculator.agesLeft.mars).toBeCloseTo(26.58)
+      expect(calculator.agesLeft.jupiter).toBeCloseTo(4.21)
+      expect(calculator.agesLeft.saturn).toBeCloseTo(1.70)
+      expect(calculator.agesLeft.uranus).toBeCloseTo(0.60)
+      expect(calculator.agesLeft.neptune).toBeCloseTo(0.30)
+      expect(calculator.agesLeft.pluto).toBeCloseTo(0.20)
+    })
+  })
 })
