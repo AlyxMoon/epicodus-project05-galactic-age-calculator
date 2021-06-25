@@ -1,0 +1,67 @@
+body *  {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+a {
+  color: #3FB0AC;
+  text-decoration: none;
+
+  transition: all 0.3s;
+
+  &:hover, &:focus {
+    color: #47DAD5;
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  min-height: 800px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #111111;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 20px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  background: linear-gradient(30deg, #111111, #091823);
+  border-top: 3px solid #3FB0AC;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+  
+    gap: 10px;
+  }
+}
+
+@import 'util/animations.scss';
+@import 'solar-system.scss';
+@import 'sidebar.scss';
