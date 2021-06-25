@@ -28,7 +28,26 @@
       </header>
 
       <article>
-        
+        <form class="pure-form pure-form-stacked">
+          <label for="input-age">
+            Age on Earth
+            <input type="number" id="input-age" min="0" /> 
+          </label>
+
+          <label for="input-expectancy">
+            Life Expectancy
+            <input type="number" id="input-expectancy" min="0" /> 
+          </label>
+
+          <button type="submit" class="pure-button pure-button-primary">
+            Update
+          </button>
+        </form>
+
+        <dl>
+          <dt>Active Planet:</dt>
+          <dd id="active-planet-label">earth</dd>
+        </dl>
       </article>
     </section>
 
@@ -42,7 +61,7 @@
         <label for="planet-venus"></label>
       </li>
       <li class="earth">
-        <input type="radio" id="planet-earth" class="planet" name="planet" value="earth" />
+        <input type="radio" id="planet-earth" class="planet" name="planet" value="earth" checked />
         <label for="planet-earth"></label>
       </li>
       <li class="mars">
