@@ -1,0 +1,50 @@
+.solar-system {
+  position: relative;
+
+  list-style: none;
+
+  li {
+    position: absolute;
+  
+    border: 2px solid white;
+    
+    @include planet();
+    animation: planetary-rotation 3s linear infinite;
+  }
+
+  .mercury {
+    @include planet(50px);
+  }
+
+  .venus {
+    @include planet(100px);
+  }
+
+  .earth {
+    @include planet(150px);
+  }
+
+  .mars {
+    @include planet(200px);
+  }
+
+  .jupiter {
+    @include planet(200px);
+  }
+
+  .saturn {
+    @include planet(250px);
+  }
+
+  .uranus {
+    @include planet(300px);
+  }
+
+  .neptune {
+    @include planet(350px);
+  }
+
+  .pluto {
+    @include planet(400px);
+  }
+}

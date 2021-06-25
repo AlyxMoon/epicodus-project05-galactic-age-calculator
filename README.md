@@ -9,7 +9,7 @@
 
 ## Description
 
-This is my fifth independent project for the Epicodus bootcamp program. The goal is create a class that can recieve a person's age and convert that age to what it would be in different planets.
+This is my fifth independent project for the Epicodus bootcamp program. The goal is create a class that can receive a person's age and convert that age to what it would be in different planets.
 
 - **Author**: Allister Moon Kays
 - **Live Website Link**: [https://alyxmoon.github.io/epicodus-project05-galatic-age-calculator/](https://alyxmoon.github.io/epicodus-project05-galatic-age-calculator/)

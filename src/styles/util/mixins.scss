@@ -1,0 +1,23 @@
+@mixin planet ($radius: 50px, $size: 10px) {
+  width: $radius;
+  height: $radius;
+
+  top: -#{$radius / 2};
+  left: -#{$radius / 2};
+
+  border-radius: 100vh;
+
+  &:after {
+    content: '';
+  
+    position: absolute;
+    top: -($size / 2);
+    left: 50%;
+  
+    width: $size;
+    height: $size;
+  
+    background-color: white;
+    border-radius: 100vh;
+  }
+}
