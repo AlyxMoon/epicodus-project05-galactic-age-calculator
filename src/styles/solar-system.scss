@@ -5,8 +5,10 @@
   $size: 15px, 
   $yearOffset: 1,
   $color: white,
+  $z-index: 1,
 ) {
   position: absolute;
+  z-index: $z-index;
   top: -#{math.div($diameter, 2)};
   left: -#{math.div($diameter, 2)};
 
@@ -18,8 +20,10 @@
 
   animation: planetary-rotation #{math.div(30, $yearOffset)}s linear infinite;
 
-  &:after {
+  label {
     content: '';
+
+    display: block;
   
     position: absolute;
     top: -#{math.div($size, 2)};
@@ -31,6 +35,16 @@
     border: 1px solid white;
     background-color: $color;
     border-radius: 100vh;
+
+    cursor: pointer;
+  }
+
+  input {
+    appearance: none;
+  }
+
+  input:checked + label {
+    box-shadow: 0 0 10px 5px lighten($color, 10);
   }
 }
 
@@ -39,12 +53,19 @@
 
   list-style: none;
 
+  label {
+
+    position: relative;
+    z-index: 3;
+  }
+
   .mercury {
     @include planet(
       $diameter: 50px, 
       $size: 10px, 
       $yearOffset: 4.152097305899739,
       $color: #D2B088,
+      $z-index: 10,
     );
   }
 
@@ -53,6 +74,7 @@
       $diameter: 100px, 
       $yearOffset: 1.6255451713395637,
       $color: #E4B250,
+      $z-index: 9,
     );
   }
 
@@ -60,6 +82,7 @@
     @include planet(
       $diameter: 150px,
       $color: #2A2E52,
+      $z-index: 8,
     );
   }
 
@@ -68,6 +91,7 @@
       $diameter: 200px, 
       $yearOffset: 0.5316751872932182,
       $color: #A28B64,
+      $z-index: 7,
     );
   }
 
@@ -77,6 +101,7 @@
       $size: 45px, 
       $yearOffset: 0.0842984451573283,
       $color: #AF8355,
+      $z-index: 6,
     );
   }
 
@@ -86,6 +111,7 @@
       $size: 40px,
       $yearOffset: 0.03395874243713337,
       $color: #F7CB82,
+      $z-index: 5,
     );
   }
 
@@ -95,6 +121,7 @@
       $size: 30px, 
       $yearOffset: 0.011902374911812329,
       $color: #B1DBF4,
+      $z-index: 4,
     );
   }
 
@@ -104,6 +131,7 @@
       $size: 30px, 
       $yearOffset: 0.006068280780808115,
       $color: #7B92C4,
+      $z-index: 3,
     );
   }
 
@@ -112,6 +140,7 @@
       $diameter: 700px, 
       $yearOffset: 0.004033548637437019,
       $color: #D5D5D5,
+      $z-index: 2,
     );
   }
 }
