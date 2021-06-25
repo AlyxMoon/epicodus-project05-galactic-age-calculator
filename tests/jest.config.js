@@ -15,6 +15,7 @@ module.exports = {
   coverageDirectory: '<rootDir>/tests/coverage',
   collectCoverageFrom: [
     'src/**/*.js',
+    '!src/main.js',
     '!**/node_modules/**',
   ],
 }
