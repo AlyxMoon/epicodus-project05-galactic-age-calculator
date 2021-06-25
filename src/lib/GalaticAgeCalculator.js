@@ -13,4 +13,6 @@ export default class GalacticAgeCalculator {
       pluto: 0,
     }
   }
+
+  setAge () {}
 }
