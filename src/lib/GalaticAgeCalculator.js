@@ -43,7 +43,7 @@ export default class GalacticAgeCalculator {
     }
   }
 
-  setAge (age, planet) {
+  setAge (age, planet = 'earth') {
     this.ages.earth = age / this.multOffsetFromEarth[planet]
     this.ages.mercury = this.ages.earth * this.multOffsetFromEarth.mercury
     this.ages.venus = this.ages.earth * this.multOffsetFromEarth.venus
@@ -56,6 +56,22 @@ export default class GalacticAgeCalculator {
 
     for (const key in this.ages) {
       this.ages[key] = roundToDecimal(this.ages[key], 2)
+    }
+  }
+
+  calculateAgesLeft () {
+    this.agesLeft.earth = this.lifeExpectancy - this.ages.earth
+    this.agesLeft.mercury = this.agesLeft.earth * this.multOffsetFromEarth.mercury
+    this.agesLeft.venus = this.agesLeft.earth * this.multOffsetFromEarth.venus
+    this.agesLeft.mars = this.agesLeft.earth * this.multOffsetFromEarth.mars
+    this.agesLeft.jupiter = this.agesLeft.earth * this.multOffsetFromEarth.jupiter
+    this.agesLeft.saturn = this.agesLeft.earth * this.multOffsetFromEarth.saturn
+    this.agesLeft.uranus = this.agesLeft.earth * this.multOffsetFromEarth.uranus
+    this.agesLeft.neptune = this.agesLeft.earth * this.multOffsetFromEarth.neptune
+    this.agesLeft.pluto = this.agesLeft.earth * this.multOffsetFromEarth.pluto
+
+    for (const key in this.agesLeft) {
+      this.agesLeft[key] = roundToDecimal(this.agesLeft[key], 2)
     }
   }
 }
