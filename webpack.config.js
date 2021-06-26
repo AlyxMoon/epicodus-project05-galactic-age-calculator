@@ -30,6 +30,11 @@ module.exports = {
           from: path.resolve(__dirname, 'src/assets/favicon.ico'),
           to: path.resolve(__dirname, 'dist/favicon.ico'),
         },
+        {
+          from: path.resolve(__dirname, 'tests/coverage/lcov-report'),
+          to: path.resolve(__dirname, 'dist/lcov-report'),
+          noErrorOnMissing: true,
+        },
       ],
     }),
   ],

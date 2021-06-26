@@ -15,6 +15,7 @@ This is my fifth independent project for the Epicodus bootcamp program. The goal
 
 - **Author**: Allister Moon Kays
 - **Live Website Link**: [https://alyxmoon.github.io/epicodus-project05-galactic-age-calculator/](https://alyxmoon.github.io/epicodus-project05-galactic-age-calculator/)
+- **Coverage Report**: [https://alyxmoon.github.io/epicodus-project05-galactic-age-calculator/lcov-report](https://alyxmoon.github.io/epicodus-project05-galactic-age-calculator/lcov-report)
 - **Copyright**: MIT License
 
 ## Setting Up The Project
